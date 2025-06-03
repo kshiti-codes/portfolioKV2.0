@@ -1,7 +1,72 @@
-import React from 'react';
-import { FileText, Award, Globe, Coffee } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  FileText, 
+  Award, 
+  Globe, 
+  Coffee, 
+  Calendar,
+  Building2,
+  Code2,
+  Satellite,
+  Building,
+  Server,
+  TrendingUp,
+  Briefcase
+} from 'lucide-react';
+import { experiences } from '../../constants/experiences';
 
 const About: React.FC = () => {
+  const [activeTimelineIndex, setActiveTimelineIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTimelineIndex(prev => (prev + 1) % experiences.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Icon renderer function
+  const renderIcon = (experience: any) => {
+    const iconProps = {
+      size: experience.isClient ? 16 : 20,
+      className: `transition-colors duration-300 ${
+        experience.isCurrent 
+          ? 'text-teal-600' 
+          : experience.isClient
+          ? activeTimelineIndex === experiences.indexOf(experience)
+            ? 'text-blue-600' 
+            : 'text-blue-500'
+          : activeTimelineIndex === experiences.indexOf(experience)
+          ? 'text-teal-500'
+          : 'text-gray-600'
+      }`
+    };
+
+    if (experience.iconType === 'url') {
+      return (
+        <img 
+          src={experience.icon} 
+          alt={`${experience.company} logo`}
+          className={`${experience.isClient ? 'w-10 h-10' : 'w-10 h-10'} object-contain`}
+        />
+      );
+    }
+
+    // Lucide icons
+    switch (experience.icon) {
+      case 'Building2': return <Building2 {...iconProps} />;
+      case 'Globe': return <Globe {...iconProps} />;
+      case 'Satellite': return <Satellite {...iconProps} />;
+      case 'Code2': return <Code2 {...iconProps} />;
+      case 'Building': return <Building {...iconProps} />;
+      case 'Server': return <Server {...iconProps} />;
+      case 'TrendingUp': return <TrendingUp {...iconProps} />;
+      case 'Briefcase': return <Briefcase {...iconProps} />;
+      default: return <Building2 {...iconProps} />;
+    }
+  };
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -14,7 +79,7 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src="../../public/images/about/profile.jpg" 
                 alt="Developer working on a laptop" 
                 className="w-full h-auto"
               />
@@ -25,33 +90,35 @@ const About: React.FC = () => {
           
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Hi, I'm <span className="text-teal-600">Alex</span>, a passionate web developer
+              Hi, I'm <span className="text-teal-600">Kshiti</span>, an Full Stack Developer with a passion for AI
+              and web development.
             </h3>
             
             <p className="text-gray-700 mb-6 leading-relaxed">
-              With over 5 years of experience in web development, I've had the pleasure of working with businesses
-              across various industries to create impactful digital experiences. My approach combines clean code,
-              thoughtful design, and a focus on user experience to deliver websites that not only look great but
-              also perform exceptionally well.
+              While most developers build websites, I build digital experiences that learn and evolve. Think Netflix recommendations, but for your business challenges.
+              <br/><br/><b>🧠 My Superpower?</b> I speak two languages fluently: 
+              <br/><b>Human</b> (understanding your business needs) and<br/><b>AI</b> (making technology work smarter for you)
+              <br/><br/><b>🛠️ What I Actually Do:</b>
+              <ul className="list-disc pl-6 mt-2">
+                <li>Transform "wouldn't it be cool if..." ideas into working AI features</li>
+                <li>Build e-commerce platforms that know your customers better than they know themselves</li>
+                <li>Create enterprise applications that scale from startup to IPO</li>
+                <li>Integrate AI into existing systems without breaking what already works</li>
+              </ul>
+
             </p>
             
             <p className="text-gray-700 mb-8 leading-relaxed">
-              I specialize in responsive design, e-commerce solutions, and content management systems that make it
-              easy for my clients to manage their online presence. My goal is to help businesses establish a strong
-              digital foundation that supports their growth and connects with their audience.
+              <b>🎯 I Work Best With:</b>
+              <ul className="list-disc pl-6 mt-2">
+                <li>Visionary Founders who want AI as their competitive moat</li>
+                <li>Growing Companies ready to scale intelligently</li>
+                <li>Enterprise Teams modernizing legacy systems</li>
+                <li>Anyone tired of "good enough" solutions</li>
+              </ul>
             </p>
             
             <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-start">
-                <div className="bg-teal-100 p-3 rounded-lg mr-4">
-                  <FileText className="h-6 w-6 text-teal-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Education</h4>
-                  <p className="text-gray-700">BSc in Computer Science</p>
-                </div>
-              </div>
-              
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-lg mr-4">
                   <Award className="h-6 w-6 text-amber-600" />
@@ -68,7 +135,17 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Projects</h4>
-                  <p className="text-gray-700">50+ Completed</p>
+                  <p className="text-gray-700">20+ Completed</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-teal-100 p-3 rounded-lg mr-4">
+                  <FileText className="h-6 w-6 text-teal-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Education</h4>
+                  <p className="text-gray-700">B.Tech in Information Technology</p>
                 </div>
               </div>
               
@@ -104,6 +181,114 @@ const About: React.FC = () => {
                   />
                 </svg>
               </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience Timeline */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <Calendar className="h-8 w-8 text-teal-600 mr-3" />
+              <h3 className="text-2xl font-bold text-gray-900">Professional Journey</h3>
+            </div>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              My career progression through various organizations, building expertise in frontend development and working with diverse teams.
+            </p>
+          </div>
+
+          <div className="relative overflow-x-auto pb-4">
+            <div className="relative" style={{ minWidth: '1000px' }}>
+              {/* Timeline Line */}
+              <div className="absolute top-14 left-6 right-6 h-0.5 bg-gray-200"></div>
+              
+              {/* Timeline Items */}
+              <div className="flex justify-between items-start">
+                {experiences.map((experience, index) => (
+                  <div key={experience.id} className="relative flex flex-col items-center" style={{ width: `${100 / experiences.length}%` }}>
+                    {/* Company Icon */}
+                    <div className={`mb-1 rounded-lg transition-all duration-300 ${
+                      experience.isCurrent 
+                        ? 'bg-teal-100' 
+                        : experience.isClient
+                        ? activeTimelineIndex === index 
+                          ? 'bg-blue-100' 
+                          : 'bg-blue-50'
+                        : activeTimelineIndex === index
+                        ? 'bg-teal-100'
+                        : 'bg-gray-100'
+                    }`}>
+                      {renderIcon(experience)}
+                    </div>
+
+                    {/* Timeline Dot */}
+                    <div className="relative z-10 mb-4">
+                      <div 
+                        className={`${
+                          experience.isClient ? 'w-8 h-8' : 'w-12 h-12'
+                        } rounded-full border-4 border-white transition-all duration-500 shadow-md ${
+                          experience.isCurrent 
+                            ? 'bg-teal-600' 
+                            : experience.isClient
+                            ? activeTimelineIndex === index 
+                              ? 'bg-blue-500' 
+                              : 'bg-blue-300'
+                            : activeTimelineIndex === index
+                            ? 'bg-teal-500'
+                            : 'bg-gray-300'
+                        }`}
+                      >
+                        {/* Glow effect for current position */}
+                        {experience.isCurrent && (
+                          <div className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-75"></div>
+                        )}
+                        {/* Animation glow effect */}
+                        {activeTimelineIndex === index && !experience.isCurrent && (
+                          <div className={`absolute inset-0 rounded-full animate-pulse opacity-60 ${
+                            experience.isClient ? 'bg-blue-400' : 'bg-teal-400'
+                          }`}></div>
+                        )}
+                        
+                        <div className={`relative z-10 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+                          experience.isClient ? 'w-2 h-2' : 'w-4 h-4'
+                        }`}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Company Info */}
+                    <div className="text-center px-2">
+                      {experience.isClient && (
+                        <div className="text-xs text-blue-600 font-medium mb-1">Client @ {experience.parentCompany}</div>
+                      )}
+                      <h4 className={`font-semibold mb-1 transition-colors duration-300 ${
+                        experience.isClient ? 'text-xs' : 'text-sm'
+                      } ${
+                        experience.isCurrent 
+                          ? 'text-teal-600' 
+                          : experience.isClient
+                          ? activeTimelineIndex === index 
+                            ? 'text-blue-600' 
+                            : 'text-blue-700'
+                          : activeTimelineIndex === index
+                          ? 'text-teal-500'
+                          : 'text-gray-900'
+                      }`}>
+                        {experience.company}
+                      </h4>
+                      <p className={`text-gray-600 leading-tight ${
+                        experience.isClient ? 'text-xs' : 'text-xs'
+                      }`}>
+                        {experience.period}
+                      </p>
+                      {experience.isCurrent && (
+                        <span className="inline-block mt-1 px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full font-medium">
+                          Current
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

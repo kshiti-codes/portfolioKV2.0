@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons';
+
 export interface Project {
   id: number;
   title: string;
@@ -6,7 +8,9 @@ export interface Project {
   category: string;
   technologies: string[];
   link?: string;
+  github?: string;
   featured: boolean;
+  content?: string; // Optional field for additional content
 }
 
 export interface Service {
@@ -31,6 +35,7 @@ export interface Testimonial {
 export interface Skill {
   id: number;
   name: string;
-  level: number;
+  icon: IconType;
+  iconColor: string; // Hex color code for the icon
   category: 'frontend' | 'backend' | 'design' | 'other';
 }

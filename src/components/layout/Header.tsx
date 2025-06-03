@@ -34,22 +34,22 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Code className="h-8 w-8 text-teal-600 mr-2" />
-            <span className="text-xl font-bold text-gray-900">DevPortfolio</span>
-          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {['home', 'about', 'projects', 'services', 'testimonials', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-gray-700 hover:text-teal-600 font-medium capitalize transition duration-300"
-              >
-                {item}
-              </button>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex justify-center flex-1">
+            <Code className="h-8 w-8 text-teal-600 mr-2" />
+            <span className="text-xl font-bold text-gray-900 mr-5">Kshiti Patel</span>
+            <div className="flex space-x-8">
+              {['home', 'about', 'projects', 'services', 'skills', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className="text-gray-700 hover:text-teal-600 font-medium capitalize transition duration-300"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              {['home', 'about', 'projects', 'services', 'testimonials', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'services', 'skills', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}

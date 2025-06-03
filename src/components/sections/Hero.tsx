@@ -1,7 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import AnimatedButton from '../ui/AnimatedButton';
+import SlidingArrowButton from '../ui/SlidingArrowButton';
 
 const Hero: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [typewriterText, setTypewriterText] = useState('');
+  const [showCursor, setShowCursor] = useState(false);
+  
+  const fullText = "Full-Stack Developer Who Speaks AI\nBuilding Scalable, Secure, and User-Centric Applications";
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Start typewriter effect after main heading animation completes
+    const startDelay = 800; // Start after heading animation
+    const typingSpeed = 50; // milliseconds per character
+    
+    const typewriterTimer = setTimeout(() => {
+      setShowCursor(true); // Show cursor when typing starts
+      let currentIndex = 0;
+      const typeInterval = setInterval(() => {
+        if (currentIndex <= fullText.length) {
+          setTypewriterText(fullText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(typeInterval);
+          // Hide cursor after a brief pause when typing completes
+          setTimeout(() => setShowCursor(false), 1000);
+        }
+      }, typingSpeed);
+      
+      return () => clearInterval(typeInterval);
+    }, startDelay);
+    
+    return () => clearTimeout(typewriterTimer);
+  }, [fullText]);
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {
@@ -29,48 +71,106 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Crafting Digital Experiences That <span className="text-teal-600">Make an Impact</span>
+            <span 
+              className={`inline-block transition-all duration-700 ease-out ${
+                isLoaded 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: '0ms' }}
+            >
+              Transforming Businesses
+            </span>
+            <br />
+            <span 
+              className={`inline-block transition-all duration-700 ease-out ${
+                isLoaded 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
+              with
+            </span> {' '}
+            <span 
+              className={`inline-block text-teal-600 transition-all duration-700 ease-out ${
+                isLoaded 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: '400ms' }}
+            >
+              AI Powered
+            </span>
+            <br />
+            <span 
+              className={`inline-block transition-all duration-700 ease-out ${
+                isLoaded 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: '600ms' }}
+            >
+              Web Solutions
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            Freelance web developer specializing in creating beautiful, functional websites 
-            and web applications that help businesses grow online.
+          <p className="text-xl text-gray-700 mb-8 leading-relaxed min-h-[3.5rem]">
+            {typewriterText.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < typewriterText.split('\n').length - 1 && <br />}
+              </span>
+            ))}
+            {showCursor && <span className="animate-pulse text-teal-600">|</span>}
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button 
+          <div 
+            className={`flex flex-col sm:flex-row justify-center gap-4 transition-all duration-700 ease-out ${
+              isLoaded 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: '800ms' }}
+          >
+            <AnimatedButton 
+              variant="primary" 
+              size="md" 
               onClick={scrollToProjects}
-              className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center"
+              showArrow={true}
             >
               View My Work
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
+            </AnimatedButton>
             
-            <button 
+            <SlidingArrowButton
+              text="Get in Touch"
               onClick={scrollToContact}
-              className="bg-white hover:bg-gray-100 text-gray-900 border border-gray-300 px-8 py-3 rounded-lg font-medium transition duration-300"
-            >
-              Get In Touch
-            </button>
+            />
           </div>
           
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
+          <div 
+            className={`mt-12 flex flex-wrap justify-center gap-6 transition-all duration-700 ease-out ${
+              isLoaded 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: '1000ms' }}
+          >
             <div className="flex items-center">
               <div className="h-1 w-8 bg-teal-500 mr-3"></div>
               <span className="text-gray-700">5+ Years Experience</span>
             </div>
             <div className="flex items-center">
               <div className="h-1 w-8 bg-teal-500 mr-3"></div>
-              <span className="text-gray-700">50+ Projects Completed</span>
+              <span className="text-gray-700">20+ Projects Completed</span>
             </div>
             <div className="flex items-center">
               <div className="h-1 w-8 bg-teal-500 mr-3"></div>
-              <span className="text-gray-700">30+ Happy Clients</span>
+              <span className="text-gray-700">20+ Happy Clients</span>
             </div>
           </div>
         </div>
       </div>
-      
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg 
           className="w-6 h-6 text-gray-700" 

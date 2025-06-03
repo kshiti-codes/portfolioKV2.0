@@ -3,58 +3,88 @@ import { Service } from '../types';
 export const services: Service[] = [
   {
     id: 1,
-    title: 'Web Design',
-    description: 'Stunning, responsive websites that look great on all devices and create a lasting impression.',
-    icon: 'PaintBucket',
+    title: 'Interactive UI/UX Design',
+    description: 'Bring your designs to life with pixel-perfect websites that look amazing and work smoothly. I turn mockups and wireframes into responsive, interactive websites that reflect your brand and engage your visitors.',
+    icon: 'Palette',
     features: [
       'Custom design mockups',
       'Responsive layouts',
       'User experience optimization',
       'Brand integration',
-      'Accessibility compliance'
+      'Mobile-First Approach',
+      'Accessibility',
     ],
-    price: 'Starting at $1,500'
+    price: 'Starting at $2,499'
   },
   {
     id: 2,
-    title: 'Web Development',
-    description: 'Custom web applications and websites built with modern technologies and best practices.',
+    title: 'Website Development',
+    description: 'Transform your business ideas into powerful web applications that work exactly how you need them to. I build modern, fast, and user-friendly applications that grow with your business and keep your customers engaged.',
     icon: 'Code',
     features: [
-      'Front-end development',
-      'Back-end development',
+      'Responsive Design',
+      'Fast Performance',
       'Database integration',
       'API development',
       'Performance optimization'
     ],
-    price: 'Starting at $2,500'
+    price: 'Starting at $3,499'
   },
   {
     id: 3,
-    title: 'E-commerce Solutions',
-    description: 'Complete online stores with product management, secure payments, and order tracking.',
+    title: 'Smart E-commerce Solutions',
+    description: 'Launch or upgrade your online store with e-commerce platforms that don\'t just sell products—they understand your customers. My solutions include intelligent features that help increase sales and reduce cart abandonment.',
     icon: 'ShoppingCart',
     features: [
       'Product catalog setup',
-      'Payment gateway integration',
-      'Inventory management',
-      'Order processing system',
-      'Customer account portal'
+      'Secure checkout',
+      'Smart Search',
+      'Personalized Recommendations',
+      'payment processing',
+      'order management'
     ],
-    price: 'Starting at $3,500'
+    price: 'Starting at $9,999'
   },
   {
     id: 4,
-    title: 'CMS Implementation',
-    description: 'Easy-to-use content management systems that allow you to update your website with ease.',
-    icon: 'FileText',
+    title: 'Custom Analytics & Business Dashboards',
+    description: 'Turn your business data into clear, actionable insights with custom dashboard solutions. See your key metrics at a glance and make data-driven decisions that grow your business.',
+    icon: 'BarChart3',
     features: [
-      'CMS setup and configuration',
-      'Custom template development',
-      'Content migration',
-      'User training',
-      'Ongoing support'
+      'Real-time Updates',
+      'Custom Reports',
+      'Trend Analysis',
+      'Automated Alerts',
+      'Visualization Tools'
     ],
-    price: 'Starting at $1,800'
+    price: 'Starting at $3,799'
+  },
+  {
+    id: 5,
+    title: 'AI Integration & Automation',
+    description: 'Add intelligent features to your existing website or application. I help businesses automate repetitive tasks and add smart capabilities that save time and improve customer experience.',
+    icon: 'Bot',
+    features: [
+      'Smart Customer Support',
+      'Content Management',
+      'Trend Analysis',
+      'Predictive Insights',
+      'Process Automation'
+    ],
+    price: 'Starting at $7,799'
+  },
+  {
+    id: 6,
+    title: 'Website Maintenance & Support',
+    description: 'Keep your website running smoothly with ongoing maintenance and support services. Regular updates, security monitoring, and performance optimization ensure your site stays fast, secure, and up-to-date.',
+    icon: 'Settings',
+    features: [
+      'Security Updates',
+      'Performance Monitoring',
+      'Content Updates',
+      'Technical Support',
+      'emergency assistance'
+    ],
+    price: 'Starting at $499/month'
   }
 ];
