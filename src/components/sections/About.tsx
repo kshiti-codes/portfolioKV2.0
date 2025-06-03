@@ -14,6 +14,7 @@ import {
   Briefcase
 } from 'lucide-react';
 import { experiences } from '../../constants/experiences';
+import ProfessionalEvolution from '../ui/ProfessionalEvolution';
 
 const About: React.FC = () => {
   const [activeTimelineIndex, setActiveTimelineIndex] = useState(0);
@@ -186,112 +187,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className="mt-16">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-4">
-              <Calendar className="h-8 w-8 text-teal-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">Professional Journey</h3>
-            </div>
-            <p className="text-gray-700 max-w-2xl mx-auto">
-              My career progression through various organizations, building expertise in frontend development and working with diverse teams.
-            </p>
-          </div>
-
-          <div className="relative overflow-x-auto pb-4">
-            <div className="relative" style={{ minWidth: '1000px' }}>
-              {/* Timeline Line */}
-              <div className="absolute top-14 left-6 right-6 h-0.5 bg-gray-200"></div>
-              
-              {/* Timeline Items */}
-              <div className="flex justify-between items-start">
-                {experiences.map((experience, index) => (
-                  <div key={experience.id} className="relative flex flex-col items-center" style={{ width: `${100 / experiences.length}%` }}>
-                    {/* Company Icon */}
-                    <div className={`mb-1 rounded-lg transition-all duration-300 ${
-                      experience.isCurrent 
-                        ? 'bg-teal-100' 
-                        : experience.isClient
-                        ? activeTimelineIndex === index 
-                          ? 'bg-blue-100' 
-                          : 'bg-blue-50'
-                        : activeTimelineIndex === index
-                        ? 'bg-teal-100'
-                        : 'bg-gray-100'
-                    }`}>
-                      {renderIcon(experience)}
-                    </div>
-
-                    {/* Timeline Dot */}
-                    <div className="relative z-10 mb-4">
-                      <div 
-                        className={`${
-                          experience.isClient ? 'w-8 h-8' : 'w-12 h-12'
-                        } rounded-full border-4 border-white transition-all duration-500 shadow-md ${
-                          experience.isCurrent 
-                            ? 'bg-teal-600' 
-                            : experience.isClient
-                            ? activeTimelineIndex === index 
-                              ? 'bg-blue-500' 
-                              : 'bg-blue-300'
-                            : activeTimelineIndex === index
-                            ? 'bg-teal-500'
-                            : 'bg-gray-300'
-                        }`}
-                      >
-                        {/* Glow effect for current position */}
-                        {experience.isCurrent && (
-                          <div className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-75"></div>
-                        )}
-                        {/* Animation glow effect */}
-                        {activeTimelineIndex === index && !experience.isCurrent && (
-                          <div className={`absolute inset-0 rounded-full animate-pulse opacity-60 ${
-                            experience.isClient ? 'bg-blue-400' : 'bg-teal-400'
-                          }`}></div>
-                        )}
-                        
-                        <div className={`relative z-10 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                          experience.isClient ? 'w-2 h-2' : 'w-4 h-4'
-                        }`}></div>
-                      </div>
-                    </div>
-                    
-                    {/* Company Info */}
-                    <div className="text-center px-2">
-                      {experience.isClient && (
-                        <div className="text-xs text-blue-600 font-medium mb-1">Client @ {experience.parentCompany}</div>
-                      )}
-                      <h4 className={`font-semibold mb-1 transition-colors duration-300 ${
-                        experience.isClient ? 'text-xs' : 'text-sm'
-                      } ${
-                        experience.isCurrent 
-                          ? 'text-teal-600' 
-                          : experience.isClient
-                          ? activeTimelineIndex === index 
-                            ? 'text-blue-600' 
-                            : 'text-blue-700'
-                          : activeTimelineIndex === index
-                          ? 'text-teal-500'
-                          : 'text-gray-900'
-                      }`}>
-                        {experience.company}
-                      </h4>
-                      <p className={`text-gray-600 leading-tight ${
-                        experience.isClient ? 'text-xs' : 'text-xs'
-                      }`}>
-                        {experience.period}
-                      </p>
-                      {experience.isCurrent && (
-                        <span className="inline-block mt-1 px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full font-medium">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProfessionalEvolution/>
       </div>
     </section>
   );

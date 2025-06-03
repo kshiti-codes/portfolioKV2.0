@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { projects } from '../../constants/projects';
-import AnimatedButton from '../ui/AnimatedButton';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
