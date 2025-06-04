@@ -63,7 +63,8 @@ const ProfessionalEvolution = () => {
     name: string;
     role: string;
     duration: string;
-    logo: string;
+    logo: string; // For company logo URL or icon identifier
+    logotype?: 'url' | 'lucide'; // Type of logo
     color: string;
     borderColor: string;
     achievements: string[];
@@ -75,9 +76,10 @@ const ProfessionalEvolution = () => {
       {
         id: 'psvm',
         name: 'PSVM Innova Pvt. Ltd.',
-        role: 'Software Developer',
-        duration: 'May-Jun 2018',
-        logo: '🏢',
+        role: 'Software Developer Intern',
+        duration: 'May 2018 - Apr 2019',
+        logo: '../../public/images/company/innova.webp',
+        logotype: 'url',
         color: 'from-blue-400 to-blue-600',
         borderColor: 'from-blue-400 to-blue-600',
         achievements: [
@@ -88,12 +90,16 @@ const ProfessionalEvolution = () => {
         ],
         description: 'My first professional role where I learned the fundamentals of web development and gained valuable industry experience.'
       },
-      {
+
+    ],
+    1: [
+        {
         id: 'webearl',
         name: 'WebEarl Technology Pvt. Ltd.',
         role: 'Frontend Developer',
-        duration: 'May-Jun 2019',
-        logo: '💻',
+        duration: 'May 2019 - Nov 2019',
+        logo: '../../public/images/company/webearl.png',
+        logotype: 'url',
         color: 'from-purple-400 to-purple-600',
         borderColor: 'from-purple-400 to-purple-600',
         achievements: [
@@ -103,15 +109,14 @@ const ProfessionalEvolution = () => {
           'Delivered pixel-perfect designs with optimal performance'
         ],
         description: 'Focused on frontend specialization and enhanced my skills in creating beautiful, responsive user interfaces.'
-      }
-    ],
-    1: [
+      },
       {
         id: 'bisag',
         name: 'BISAG',
         role: 'Junior Developer',
         duration: 'Dec 2019 - Apr 2020',
-        logo: '🏛️',
+        logo: '../../public/images/company/bisag.jpg',
+        logotype: 'url',
         color: 'from-green-400 to-green-600',
         borderColor: 'from-green-400 to-green-600',
         achievements: [
@@ -122,12 +127,16 @@ const ProfessionalEvolution = () => {
         ],
         description: 'Gained experience in government sector development with focus on public service applications.'
       },
-      {
+      
+    ],
+    2: [
+        {
         id: 'tatvasoft',
         name: 'Tatvasoft Pvt. Ltd.',
         role: 'Software Engineer',
         duration: 'Oct 2020 - Feb 2021',
-        logo: '⚡',
+        logo: '../../public/images/company/tatvasoft.png',
+        logotype: 'url',
         color: 'from-orange-400 to-red-600',
         borderColor: 'from-orange-400 to-red-600',
         achievements: [
@@ -137,15 +146,14 @@ const ProfessionalEvolution = () => {
           'Gained experience in agile development methodologies'
         ],
         description: 'Expanded my technical expertise while working on diverse international projects.'
-      }
-    ],
-    2: [
+      },
       {
         id: 'tcs',
         name: 'Tata Consultancy Services',
         role: 'Senior Frontend Developer',
         duration: 'Apr 2021 - Aug 2024',
-        logo: '🏢',
+        logo: '../../public/images/company/tcs.jpeg',
+        logotype: 'url',
         color: 'from-blue-600 to-indigo-600',
         borderColor: 'from-blue-600 to-indigo-600',
         achievements: [
@@ -169,7 +177,7 @@ const ProfessionalEvolution = () => {
         achievements: [
           'Launched successful projects for businesses',
           'Specialized in AI-powered web solutions and automation',
-          'Built strong client relationships across the Globe',
+          'Built strong client relationships across the',
           'Delivered 20+ projects with 98% client satisfaction rate'
         ],
         description: 'Currently building innovative AI-powered solutions as an independent consultant, helping businesses transform digitally.'
@@ -277,9 +285,13 @@ const ProfessionalEvolution = () => {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center text-white text-xl mr-4`}>
-                          {company.logo}
-                        </div>
+                        { company.logotype === 'url' ? (
+                          <img src={company.logo} alt={company.name} className="w-12 h-12 md:h-8 md:w-8 mb-1 md:mb-0 md:mr-2 overflow-visible" />
+                        ) : (
+                          <div className={`w-12 h-12 md:h-8 md:w-8 mb-1 md:mb-0 md:mr-2 flex items-center justify-center rounded-full`}>
+                            <span className="text-white text-lg">{company.logo}</span>
+                          </div>
+                        )}
                         <div>
                           <h4 className="font-bold text-gray-900 mb-1">{company.name}</h4>
                           <p className="text-teal-600 font-medium text-sm">{company.role}</p>

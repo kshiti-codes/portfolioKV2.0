@@ -91,7 +91,7 @@ const About: React.FC = () => {
           
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Hi, I'm <span className="text-teal-600">Kshiti</span>, an Full Stack Developer with a passion for AI
+              Hi, I'm <span className="text-teal-600">Kshiti</span>, a Full Stack Developer with a passion for AI
               and web development.
             </h3>
             
