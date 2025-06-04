@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
   
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(project => project.category.toLowerCase() === filter);
+    : projects.filter(project => project.category === filter);
 
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
   const hasMoreProjects = filteredProjects.length > 3;
