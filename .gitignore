@@ -11,7 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Environment files (keep .env.production for deployment)
 .env.local
+.env.development.local
+.env.test.local
+# Don't ignore .env.production as it's needed for cPanel
 
 # Editor directories and files
 .vscode/*
@@ -23,4 +28,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
+
+# Build files
+public_html/*
+!public_html/.gitkeep

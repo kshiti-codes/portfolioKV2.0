@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     period: 'May 2018 - June 2018',
     startDate: '2018-05',
     endDate: '2018-06',
-    icon: '../../public/images/company/innova.webp', // URL to the company logo
+    icon: '/images/company/innova.webp', // URL to the company logo
     iconType: 'url'
   },
   {
@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
     period: 'May 2019 - June 2019',
     startDate: '2019-05',
     endDate: '2019-06',
-    icon: '../../public/images/company/webearl.png', // URL to the company logo
+    icon: '/images/company/webearl.png', // URL to the company logo
     iconType: 'url'
   },
   {
@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     period: 'Dec 2019 - April 2020',
     startDate: '2019-12',
     endDate: '2020-04',
-    icon: '../../public/images/company/bisag.jpg',
+    icon: '/images/company/bisag.jpg',
     iconType: 'url'
   },
   {
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
     period: 'Oct 2020 - Feb 2021',
     startDate: '2020-10',
     endDate: '2021-02',
-    icon: '../../public/images/company/tatvasoft.png',
+    icon: '/images/company/tatvasoft.png',
     iconType: 'url'
   },
   {
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     period: 'April 2021 - Aug 2024',
     startDate: '2021-04',
     endDate: '2024-08',
-    icon: '../../public/images/company/tcs.png',
+    icon: '/images/company/tcs.png',
     iconType: 'url'
   },
   {
@@ -65,7 +65,7 @@ export const experiences: Experience[] = [
     endDate: '2023-12',
     isClient: true,
     parentCompany: 'TCS',
-    icon: '../../public/images/company/ibm.webp',
+    icon: '/images/company/ibm.webp',
     iconType: 'url'
   },
   {
@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
     endDate: '2024-08',
     isClient: true,
     parentCompany: 'TCS',
-    icon: '../../public/images/company/moodys.png',
+    icon: '/images/company/moodys.png',
     iconType: 'url'
   },
   {

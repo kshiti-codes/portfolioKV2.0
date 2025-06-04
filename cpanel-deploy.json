@@ -1,0 +1,19 @@
+{
+  "repository": {
+    "url": "https://github.com/your-username/your-repo-name.git",
+    "branch": "main"
+  },
+  "deployment": {
+    "path": "/public_html",
+    "build_command": "npm ci && npm run build",
+    "node_version": "18",
+    "auto_deploy": true
+  },
+  "environment": {
+    "NODE_ENV": "production"
+  },
+  "post_deploy": [
+    "cp dist/* /home/username/public_html/",
+    "chmod 644 /home/username/public_html/.htaccess"
+  ]
+}
