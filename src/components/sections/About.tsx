@@ -163,7 +163,10 @@ const About: React.FC = () => {
             
             <div className="mt-8">
               <a 
-                href="#" 
+                href="./pdf/resume.pdf" 
+                download
+                target='_blank'
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition duration-300"
               >
                 Download Resume
