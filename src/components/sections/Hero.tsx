@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
           </div>
           
           <div 
-            className={`mt-12 flex flex-wrap justify-center gap-6 transition-all duration-700 ease-out ${
+            className={`mt-12 mb-20 flex flex-wrap justify-center gap-6 transition-all duration-700 ease-out ${
               isLoaded 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-8'
