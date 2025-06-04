@@ -80,7 +80,7 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/images/about/profile.jpg" 
+                src="./images/about/profile.jpg" 
                 alt="Developer working on a laptop" 
                 className="w-full h-auto"
               />
