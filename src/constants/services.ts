@@ -40,8 +40,8 @@ export const services: Service[] = [
       'Secure checkout',
       'Smart Search',
       'Personalized Recommendations',
-      'payment processing',
-      'order management'
+      'Payment processing',
+      'Order management'
     ],
     price: 'Starting at $9,999'
   },
@@ -83,8 +83,23 @@ export const services: Service[] = [
       'Performance Monitoring',
       'Content Updates',
       'Technical Support',
-      'emergency assistance'
+      'Emergency assistance'
     ],
     price: 'Starting at $499/month'
+  },
+  {
+    id: 7,
+    title: 'Smart Mobile App Development',
+    description: 'Create mobile applications that adapt to user needs and business requirements. I develop iOS and Android apps with intelligent features, robust performance, and scalable architecture that grows with your business.',
+    icon: 'Smartphone',
+    features: [
+      'Cross-Platform Development',
+      'Smart User Personalization',
+      'Cloud Integration & Sync',
+      'Advanced Analytics Dashboard',
+      'Progressive Web App Support',
+      'Automated Testing & Deployment'
+    ],
+    price: 'Starting at $9,999'
   }
 ];

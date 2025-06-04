@@ -92,7 +92,7 @@ const About: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Hi, I'm <span className="text-teal-600">Kshiti</span>, a Full Stack Developer with a passion for AI
-              and web development.
+              and Web development.
             </h3>
             
             <p className="text-gray-700 mb-6 leading-relaxed">

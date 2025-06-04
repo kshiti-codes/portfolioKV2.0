@@ -12,9 +12,9 @@ const SlidingArrowButton: React.FC<SlidingArrowButtonProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`text-center lg:text-right ${className}`}>
+    <div className={`text-center lg:text-right sm:justify-items-center ${className}`}>
       <button 
-        className="cursor-pointer float-right relative bg-white/10 py-2 rounded-full min-w-[8.5rem] min-h-[2.92rem] group max-w-full flex items-center justify-start hover:bg-teal-600 transition-all duration-[0.8s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] shadow-[inset_1px_2px*5px*#00000080]"
+        className="cursor-pointer md:float-right lg:float-right sm:justify-center sm:items-center relative bg-white/10 py-2 rounded-full min-w-[8.5rem] min-h-[2.92rem] group max-w-full flex items-center justify-start hover:bg-teal-600 transition-all duration-[0.8s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] shadow-[inset_1px_2px*5px*#00000080]"
         onClick={onClick}
       >
         <div className="absolute flex px-1 py-0.5 justify-start items-center inset-0">

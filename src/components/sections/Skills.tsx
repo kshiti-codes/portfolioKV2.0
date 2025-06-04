@@ -91,7 +91,7 @@ const Skills: React.FC = () => {
         
         <div 
           ref={skillsRef}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+          className="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
         >
           {filteredSkills.map((skill, index) => {
             const waveDelay = getWaveDelay(index, filteredSkills.length);
@@ -100,7 +100,7 @@ const Skills: React.FC = () => {
             return (
               <div 
                 key={skill.id} 
-                className={`group bg-white rounded-xl p-6 shadow-md border border-gray-100 transform transition-all duration-600 ease-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 ${
+                className={`group bg-white rounded-xl p-4 sm:p-6 shadow-md border border-gray-100 transform transition-all duration-600 ease-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 ${
                   isVisible 
                     ? 'scale-100 opacity-100 translate-y-0' 
                     : 'scale-75 opacity-0 translate-y-8'
@@ -111,14 +111,15 @@ const Skills: React.FC = () => {
               >
                 <div className="flex flex-col items-center text-center">
                   <div 
-                    className="w-12 h-12 mb-3 transition-all duration-500 group-hover:scale-110 flex items-center justify-center"
+                    className="w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-3 transition-all duration-500 group-hover:scale-110 flex items-center justify-center"
                     style={{ 
                       color: isVisible ? skill.iconColor : '#D1D5DB'
                     }}
                   >
-                    <IconComponent size={48} />
+                    <IconComponent size={32} className="sm:hidden" />
+                    <IconComponent size={48} className="hidden sm:block" />
                   </div>
-                  <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
                     {skill.name}
                   </h3>
                 </div>

@@ -105,7 +105,6 @@ const Footer: React.FC = () => {
                   'Website Maintenance & Support',
                   'Interactive UI/UX Design',
                   'Custom Analytics & Business Dashboards',
-                  'Interactive UI/UX Design',
                 ].map((service) => (
                   <li key={service}>
                     <span className="text-gray-400 hover:text-teal-400 transition-colors duration-300 cursor-pointer">

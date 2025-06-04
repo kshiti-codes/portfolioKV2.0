@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { services } from '../../constants/services';
 import SlidingArrowButton from '../ui/SlidingArrowButton';
-import { CheckCircle, Palette, Code, ShoppingCart, BarChart3, Bot, Settings } from 'lucide-react';
+import { CheckCircle, Palette, Code, ShoppingCart, BarChart3, Bot, Settings, Smartphone } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   Palette: <Palette className="h-7 w-7 text-teal-600" />,
@@ -10,6 +10,7 @@ const iconMap: Record<string, React.ReactNode> = {
   BarChart3: <BarChart3 className="h-7 w-7 text-teal-600" />,
   Bot: <Bot className="h-7 w-7 text-teal-600" />,
   Settings: <Settings className="h-7 w-7 text-teal-600" />,
+  Smartphone: <Smartphone className="h-7 w-7 text-teal-600" />,
 };
 
 const Services: React.FC = () => {
@@ -151,27 +152,27 @@ const Services: React.FC = () => {
             {duplicatedServices.map((service, index) => (
               <div 
                 key={`${service.id}-${index}`}
-                className="flex-shrink-0 w-96"
+                className="flex-shrink-0 w-80 sm:w-96 md:w-80 lg:w-96 xl:w-96 2xl:w-96"
               >
-                <div className="bg-white rounded-lg p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl h-full">
-                  <div className="bg-teal-50 p-4 rounded-full inline-block mb-6">
+                <div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl h-full">
+                  <div className="bg-teal-50 p-3 sm:p-4 rounded-full inline-block mb-4 sm:mb-6">
                     {iconMap[service.icon]}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-700 mb-6 text-justify">{service.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 text-justify">{service.description}</p>
                   
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-teal-600 mr-2 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
+                        <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-teal-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm sm:text-base text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-lg font-semibold text-gray-900">{service.price}</p>
+
+                  <div className="pt-3 sm:pt-4 border-t border-gray-100">
+                    <p className="text-base sm:text-lg font-semibold text-gray-900">{service.price}</p>
                   </div>
                 </div>
               </div>

@@ -205,7 +205,7 @@ const ProfessionalEvolution = () => {
             <div className="bg-gradient-to-r from-teal-500 to-cyan-500 p-3 rounded-full mr-3">
               <TrendingUp className="h-6 w-6 text-white" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+            <h2 className="text-xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
               Professional Evolution
             </h2>
           </div>
@@ -335,9 +335,13 @@ const ProfessionalEvolution = () => {
           <div className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
-                <div className={`w-16 h-16 bg-gradient-to-r ${selectedCompany.color} rounded-2xl flex items-center justify-center text-white text-2xl mr-4`}>
-                  {selectedCompany.logo}
-                </div>
+                { selectedCompany.logotype === 'url' ? (
+                    <img src={selectedCompany.logo} alt={selectedCompany.name} className="w-12 h-12 md:h-8 md:w-8 mb-1 md:mb-0 md:mr-2 overflow-visible" />
+                    ) : (
+                    <div className={`w-12 h-12 md:h-8 md:w-8 mb-1 md:mb-0 md:mr-2 flex items-center justify-center rounded-full`}>
+                        <span className="text-white text-lg">{selectedCompany.logo}</span>
+                    </div>
+                )}
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">{selectedCompany.name}</h3>
                   <p className="text-teal-600 font-medium">{selectedCompany.role}</p>

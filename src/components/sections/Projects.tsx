@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   
-  const categories = ['all', ...Array.from(new Set(projects.map(project => project.category.toLowerCase())))];
+  const categories = ['all', ...Array.from(new Set(projects.map(project => project.category)))];
   
   const filteredProjects = filter === 'all' 
     ? projects 
