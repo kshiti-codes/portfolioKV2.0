@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code } from 'lucide-react';
+import { testimonials } from '../../constants/testimonials';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,10 +38,10 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex justify-center flex-1">
-            <Code className="h-8 w-8 text-teal-600 mr-2" />
+            <img src="./public/images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-full object-cover" />
             <span className="text-xl font-bold text-gray-900 mr-5">Kshiti Patel</span>
             <div className="flex space-x-8">
-              {['home', 'about', 'projects', 'services', 'skills', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -67,7 +68,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              {['home', 'about', 'projects', 'services', 'skills', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}

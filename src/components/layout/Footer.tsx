@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Mail, Code, ArrowUp, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Slack, Mail, Code, ArrowUp, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -41,9 +41,7 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="space-y-6">
               <div className="flex items-center group">
-                <div className="bg-teal-600 p-2 rounded-lg mr-3 group-hover:bg-teal-500 transition-colors duration-300">
-                  <Code className="h-6 w-6 text-white" />
-                </div>
+                <img src="./public/images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-lg object-cover" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
                   Kshiti Patel
                 </span>
@@ -53,6 +51,7 @@ const Footer: React.FC = () => {
               </p>
               <div className="flex space-x-4">
                 {[
+                  { icon: Slack, href: "https://kshitis-worspace.slack.com/team/U090PREEWLD", label: "Slack" },
                   { icon: Github, href: "https://github.com/kshiti-codes", label: "GitHub" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/kshitipatel1999/", label: "LinkedIn" },
                   { icon: Mail, href: "mailto:ktp.fiverr@gmail.com", label: "Email" }
@@ -76,7 +75,7 @@ const Footer: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-teal-500 rounded-full"></div>
               </h3>
               <ul className="space-y-3">
-                {['home', 'about', 'projects', 'services'].map((item) => (
+                {['home', 'about', 'projects', 'services', 'testimonial'].map((item) => (
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item)}
@@ -130,18 +129,6 @@ const Footer: React.FC = () => {
                     <p className="text-gray-400 text-sm">Email</p>
                     <a href="mailto:ktp.fiverr@gmail.com" className="text-white hover:text-teal-400 transition-colors duration-300">
                       ktp.fiverr@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3 group">
-                  <div className="bg-gray-800 p-2 rounded-lg group-hover:bg-teal-600 transition-colors duration-300">
-                    <Phone className="h-4 w-4 text-teal-400 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+4915510573856" className="text-white hover:text-teal-400 transition-colors duration-300">
-                      +49 15510573856
                     </a>
                   </div>
                 </div>

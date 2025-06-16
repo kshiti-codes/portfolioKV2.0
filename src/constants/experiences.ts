@@ -42,9 +42,9 @@ export const experiences: Experience[] = [
   {
     id: 4,
     company: 'Tatvasoft Pvt. Ltd.',
-    period: 'Oct 2020 - Feb 2021',
+    period: 'Oct 2020 - Mar 2021',
     startDate: '2020-10',
-    endDate: '2021-02',
+    endDate: '2021-03',
     icon: './images/company/tatvasoft.png',
     iconType: 'url'
   },

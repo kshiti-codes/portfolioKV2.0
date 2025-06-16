@@ -12,7 +12,8 @@ import {
   FaInstagram,
   FaYoutube,
   FaFacebook,
-  FaPinterest
+  FaPinterest,
+  FaSlack,
 } from 'react-icons/fa';
 import { 
   SiLeetcode, 
@@ -78,6 +79,7 @@ const SocialIconsReactIcons: React.FC<SocialIconsProps> = ({
       youtube: <FaYoutube size={iconSizes[size]} />,
       facebook: <FaFacebook size={iconSizes[size]} />,
       pinterest: <FaPinterest size={iconSizes[size]} />,
+      slack: <FaSlack size={iconSizes[size]} />,
     };
     
     return iconMap[iconName.toLowerCase()] || <CgWebsite size={iconSizes[size]} />;
@@ -106,6 +108,7 @@ const SocialIconsReactIcons: React.FC<SocialIconsProps> = ({
       youtube: 'hover:text-red-600 hover:bg-red-50',
       facebook: 'hover:text-blue-600 hover:bg-blue-50',
       pinterest: 'hover:text-red-600 hover:bg-red-50',
+      slack: 'hover:text-purple-600 hover:bg-purple-50',
     };
     
     return colorMap[iconName.toLowerCase()] || 'hover:text-teal-600 hover:bg-teal-50';

@@ -65,16 +65,6 @@ const Contact: React.FC = () => {
                 
                 <div className="flex items-start">
                   <div className="bg-teal-100 p-3 rounded-lg mr-4">
-                    <Phone className="h-6 w-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-700">+49 15510573856</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-teal-100 p-3 rounded-lg mr-4">
                     <MapPin className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>

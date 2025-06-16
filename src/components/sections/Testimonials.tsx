@@ -37,11 +37,7 @@ const Testimonials: React.FC = () => {
                 <div className="bg-gray-800 rounded-lg p-8 md:p-10 shadow-lg">
                   <div className="flex flex-col md:flex-row items-center mb-6">
                     <div className="mb-4 md:mb-0 md:mr-6">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name} 
-                        className="h-20 w-20 rounded-full object-cover border-2 border-teal-500"
-                      />
+                      <img src={testimonial.image} alt={testimonial.name} className="h-20 w-20 rounded-full object-cover border-2 border-teal-500" />
                     </div>
                     
                     <div className="text-center md:text-left">

@@ -134,7 +134,7 @@ const ProfessionalEvolution = () => {
         id: 'tatvasoft',
         name: 'Tatvasoft Pvt. Ltd.',
         role: 'Software Engineer',
-        duration: 'Oct 2020 - Feb 2021',
+        duration: 'Oct 2020 - Mar 2021',
         logo: './images/company/tatvasoft.png',
         logotype: 'url',
         color: 'from-orange-400 to-red-600',

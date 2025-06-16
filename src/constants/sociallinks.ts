@@ -6,6 +6,11 @@ export interface SocialLink {
 }
 export const socialLinks: SocialLink[] = [
   {
+    name: 'Slack',
+    url: 'https://kshitis-worspace.slack.com/team/U090PREEWLD',
+    icon: 'slack'
+  },
+  {
     name: 'GitHub',
     url: 'https://github.com/kshiti-codes',
     icon: 'github'

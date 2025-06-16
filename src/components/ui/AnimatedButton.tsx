@@ -67,7 +67,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   if (href && !disabled) {
     return (
       <div className="relative inline-flex items-center justify-center group">
-        <div className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-teal-500 via-amber-500 to-pink-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
+        {/* <div className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-teal-500 via-amber-500 to-pink-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" /> */}
         <a
           role="button"
           className={combinedClasses}
@@ -82,7 +82,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   
   return (
     <div className="relative inline-flex items-center justify-center group">
-      <div className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-teal-500 via-amber-500 to-pink-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
+      <div className="absolute -inset-0.5 sm:bg-gradient-to-r from-teal-500 via-amber-500 to-pink-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
       <button
         type={type}
         className={combinedClasses}
