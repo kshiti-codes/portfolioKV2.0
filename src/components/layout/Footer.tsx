@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="space-y-6">
               <div className="flex items-center group">
-                <img src="./public/images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-lg object-cover" />
+                <img src="./images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-lg object-cover" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
                   Kshiti Patel
                 </span>

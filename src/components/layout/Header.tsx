@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex justify-center flex-1">
-            <img src="./public/images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-full object-cover" />
+            <img src="./images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-full object-cover" />
             <span className="text-xl font-bold text-gray-900 mr-5">Kshiti Patel</span>
             <div className="flex space-x-8">
               {['home', 'about', 'projects', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
