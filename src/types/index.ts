@@ -39,3 +39,19 @@ export interface Skill {
   iconColor: string; // Hex color code for the icon
   category: 'frontend' | 'backend' | 'design' | 'other';
 }
+
+export interface LiveTool {
+  id: number;
+  title: string;
+  description: string;
+  shortDescription: string;
+  image: string;
+  category: 'AI Tools' | 'Utilities' | 'Demos' | 'Interactive';
+  technologies: string[];
+  artifactUrl: string;
+  sourceCode?: string;
+  featured: boolean;
+  usageCount?: number;
+  complexity: 'Beginner' | 'Intermediate' | 'Advanced';
+  status: 'Live' | 'Beta' | 'Coming Soon';
+}

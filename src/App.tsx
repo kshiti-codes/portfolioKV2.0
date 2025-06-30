@@ -1,24 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Projects from './components/sections/Projects';
-import Services from './components/sections/Services';
-import Skills from './components/sections/Skills';
-import Testimonials from './components/sections/Testimonials';
-import Contact from './components/sections/Contact';
+import HomePage from './components/pages/HomePage';
 
 function App() {
   return (
-    <Layout>
-      <Hero />
-      <About />
-      <Projects />
-      <Services />
-      <Skills />
-      <Testimonials />
-      <Contact />
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
