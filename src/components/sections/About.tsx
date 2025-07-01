@@ -146,7 +146,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Education</h4>
-                  <p className="text-gray-700">B.Tech in Information Technology</p>
+                  <p className="text-gray-700">Bachelor's in Information Technology</p>
                 </div>
               </div>
               
