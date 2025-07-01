@@ -1,7 +1,7 @@
 
 import React from 'react';
 import emailjs from '@emailjs/browser';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Calendar, Linkedin } from 'lucide-react';
 import ContactForm from '../ui/ContactForm';
 import SocialIcons from '../ui/SocialIcons';
 import {socialLinks as contactSocialLinks} from '../../constants/sociallinks';
@@ -59,7 +59,34 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-700">ktp.fiverr@gmail.com</p>
+                    <a href="mailto:kshiti.de@gmail.com" className="text-black hover:text-teal-400 transition-colors duration-300">
+                      kshiti.de@gmail.com
+                    </a><br></br>
+                    <a href="mailto:ktp.fiverr@gmail.com" className="text-black hover:text-teal-400 transition-colors duration-300">
+                      ktp.fiverr@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-teal-100 p-3 rounded-lg mr-4">
+                    <Calendar className="h-6 w-6 text-teal-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Book Consultation</h4>
+                    <a className="text-black hover:text-teal-400 transition-colors duration-300" href='https://calendar.app.google/Q95YxehEeVWCQfju9'>https://calendar.app.google/Q95YxehEeVWCQfju9</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-teal-100 p-3 rounded-lg mr-4">
+                    <Linkedin className="h-6 w-6 text-teal-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/kshitipatel1999/" className="text-black hover:text-teal-400 transition-colors duration-300">
+                      Kshiti Patel
+                    </a>
                   </div>
                 </div>
                 
