@@ -39,7 +39,7 @@ const CVJobAnalyzer = () => {
     
     // Simulate Claude API call (replace with actual API integration)
     const analyzeWithGroq = async (jobDesc: string, cvContent: string) => {
-        const API_KEY = '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'; // Set in your .env file as VITE_GROQ_API_KEY
+        const API_KEY = import.meta.env.VITE_GROQ_API_KEY; // Set in your .env file as VITE_GROQ_API_KEY
         if (!API_KEY) {
             throw new Error('API key not configured');
         }
@@ -112,7 +112,7 @@ const CVJobAnalyzer = () => {
     };
 
     const regenerateCoverLetter = async () => {
-        const API_KEY = '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';
+        const API_KEY = import.meta.env.VITE_GROQ_API_KEY; // Ensure this is set in your .env file
         
         if (!API_KEY) {
             throw new Error('API key not configured');
