@@ -11,16 +11,16 @@ import LiveTools from '../sections/LiveTools';
 
 function HomePage() {
   return (
-    <>
+    <Layout>
       <Hero />
       <About />
       <Projects />
       <LiveTools />
-      <Services />
+      {/* <Services /> */}
       <Skills />
       <Testimonials />
       <Contact />
-    </>
+    </Layout>
   );
 }
 

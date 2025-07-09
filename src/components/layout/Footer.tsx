@@ -41,10 +41,12 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="space-y-6">
               <div className="flex items-center group">
+                <a href="/" className="flex items-center">
                 <img src="./images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-lg object-cover" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
                   Kshiti Patel
                 </span>
+                </a>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Transforming businesses with AI-powered web solutions. Building scalable, secure, and user-centric applications.

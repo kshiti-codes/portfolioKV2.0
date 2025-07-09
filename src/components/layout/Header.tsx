@@ -38,10 +38,13 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex justify-center flex-1">
-            <img src="./images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-full object-cover" />
-            <span className="text-xl font-bold text-gray-900 mr-5">Kshiti Patel</span>
+            <a href="/" className="flex items-center">
+              <img src="./images/logo.png" alt="logo" className="h-8 w-8 mr-2 rounded-full object-cover" />
+              <span className="text-xl font-bold text-gray-900 mr-5">Kshiti Patel</span>
+            </a>
             <div className="flex space-x-8">
-              {['home', 'about', 'projects', 'live-tools', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
+              {/* 'services', */}
+              {['home', 'about', 'projects', 'live-tools', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -68,7 +71,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              {['home', 'about', 'projects', 'live-tools', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'live-tools', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}

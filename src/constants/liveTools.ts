@@ -8,8 +8,8 @@ export const liveTools: LiveTool[] = [
         shortDescription: 'AI-powered complete job application optimization and career enhancement platform',
         image: './images/projects/jobanalyzer.png', // You'll need to create/add this image
         category: 'AI Tools',
-        technologies: ['React', 'TypeScript', 'NLP', 'PDF Processing', 'Claude AI'],
-        artifactUrl: 'https://claude.ai/public/artifacts/212d0060-729b-4114-8741-73d3438d4810',     
+        technologies: ['React', 'TypeScript', 'NLP', 'PDF Processing', 'Groq AI'],
+        artifactUrl: '/cv-job-analyzer',     
         sourceCode: '', // Add if you want to share code
         featured: true,
         usageCount: 847, // Start with a reasonable number
