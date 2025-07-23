@@ -16,7 +16,7 @@ function HomePage() {
       <About />
       <Projects />
       <LiveTools />
-      {/* <Services /> */}
+      <Services />
       <Skills />
       <Testimonials />
       <Contact />
