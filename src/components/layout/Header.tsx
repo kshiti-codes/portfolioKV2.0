@@ -44,7 +44,7 @@ const Header: React.FC = () => {
             </a>
             <div className="flex space-x-8">
               {/* 'services', */}
-              {['home', 'about', 'projects', 'live-tools', 'skills', 'testimonials', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'live-tools', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              {['home', 'about', 'projects', 'live-tools', 'skills', 'testimonials', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'live-tools', 'services', 'skills', 'testimonials', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}

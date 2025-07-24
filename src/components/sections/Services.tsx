@@ -171,9 +171,9 @@ const Services: React.FC = () => {
                     ))}
                   </ul>
 
-                  <div className="pt-3 sm:pt-4 border-t border-gray-100">
+                  {/* <div className="pt-3 sm:pt-4 border-t border-gray-100">
                     <p className="text-base sm:text-lg font-semibold text-gray-900">{service.price}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
