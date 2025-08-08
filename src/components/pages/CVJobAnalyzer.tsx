@@ -37,153 +37,185 @@ const CVJobAnalyzer = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     // Simple test to verify Groq API works
     
-    // Simulate Claude API call (replace with actual API integration)
-    const analyzeWithGroq = async (jobDesc: string, cvContent: string) => {
-        const API_KEY = import.meta.env.VITE_GROQ_API_KEY; // Set in your .env file as VITE_GROQ_API_KEY
+    const analyzeWithGemini = async (jobDesc: string, cvContent: string) => {
+        const API_KEY = import.meta.env.VITE_GEMINI_API_KEY; // Set in your .env file as VITE_GEMINI_API_KEY
+        
         if (!API_KEY) {
-            throw new Error('API key not configured');
+            throw new Error('Gemini API key not configured.');
         }
+
         try {
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            console.log('Analyzing with Gemini API...');
+            
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${API_KEY}`,
+
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    model: 'meta-llama/llama-4-scout-17b-16e-instruct', // Free model
-                    messages: [
-                        {
-                            role: 'user',
-                            content: `You are a professional CV analyst. Analyze this CV against the job description and return ONLY valid JSON in this exact format:
+                    contents: [{
+                        parts: [{
+                            text: `You are a professional CV analyst. Analyze this CV against the job description and return ONLY valid JSON in this exact format:
                             {
-                            "compatibilityScore": 75,
-                            "skillsMatch": {
-                                "matched": ["JavaScript", "React", "Node.js"],
-                                "missing": ["Python", "AWS", "Docker"],
-                                "priority": ["Python", "AWS"]
-                            },
-                            "keywordAnalysis": {
-                                "matched": 8,
-                                "total": 12,
-                                "critical_missing": ["Python", "AWS"]
-                            },
-                            "improvements": [
-                                {
-                                "section": "Skills",
-                                "current": "Basic JavaScript knowledge",
-                                "suggested": "Advanced JavaScript with ES6+ features",
-                                "impact": "high"
-                                }
-                            ],
-                            "coverLetter": "Dear Hiring Manager, [sample cover letter text]",
-                            "interviewQuestions": [
-                                "Tell me about your experience with JavaScript",
-                                "How do you handle API integration?"
-                            ]
+                                "compatibilityScore": 75,
+                                "skillsMatch": {
+                                    "matched": ["JavaScript", "React", "Node.js"],
+                                    "missing": ["Python", "AWS", "Docker"],
+                                    "priority": ["Python", "AWS"]
+                                },
+                                "keywordAnalysis": {
+                                    "matched": 8,
+                                    "total": 12,
+                                    "critical_missing": ["Python", "AWS"]
+                                },
+                                "improvements": [
+                                    {
+                                        "section": "Skills",
+                                        "current": "Basic JavaScript knowledge",
+                                        "suggested": "Advanced JavaScript with ES6+ features",
+                                        "impact": "high"
+                                    }
+                                ],
+                                "coverLetter": "Dear Hiring Manager, [sample cover letter text]",
+                                "interviewQuestions": [
+                                    "Tell me about your experience with JavaScript",
+                                    "How do you handle API integration?"
+                                ]
                             }
-                             IMPORTANT: 
+
+                            IMPORTANT: 
                             - Create a professional, personalized cover letter that highlights the candidate's relevant skills
                             - Use the job description to identify key requirements and address them specifically
-                            - Keep the cover letter concise but compelling (4-5 paragraphs of content around 400 words ,for new paragraphs use \\n)
+                            - Keep the cover letter concise but compelling (4-5 paragraphs of content around 400 words, for new paragraphs use \\n)
                             - Use a professional yet engaging tone
-                            - Include specific examples where possible                           
+                            - Include specific examples where possible
+                            - Provide realistic compatibility score based on actual match between CV and job requirements
+                            - Focus on actionable improvements that would increase job match
+
                             JOB DESCRIPTION: ${jobDesc}
-                            CV CONTENT: ${cvContent}                   
+
+                            CV CONTENT: ${cvContent}
+
                             Return ONLY the JSON object, no additional text or explanation.`
+                        }]
+                    }],
+                    generationConfig: {
+                        temperature: 0.3,
+                        topK: 1,
+                        topP: 1,
+                        maxOutputTokens: 2048,
+                    },
+                    safetySettings: [
+                        {
+                            category: "HARM_CATEGORY_HARASSMENT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_HATE_SPEECH",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
                         }
-                    ],
-                    temperature: 0.3,
-                    max_tokens: 2048
+                    ]
                 })
             });
-            
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(`Gemini API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+            }
+
             const data = await response.json();
-            const content = data.choices[0].message.content;
-            console.log('Groq API Response:', content);
-            
+            console.log('Gemini API Response:', data);
+
+            if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+                throw new Error('Invalid response format from Gemini API');
+            }
+
+            const content = data.candidates[0].content.parts[0].text;
+            console.log('Generated content:', content);
+
+            // Extract JSON from the response
             const jsonMatch = content.match(/\{[\s\S]*\}/);
             return jsonMatch ? JSON.parse(jsonMatch[0]) : null;
             
         } catch (error) {
-            console.error('Groq API Error:', error);
+            console.error('Gemini API Error:', error);
             throw error;
         }
     };
 
     const regenerateCoverLetter = async () => {
-        const API_KEY = import.meta.env.VITE_GROQ_API_KEY; // Ensure this is set in your .env file
+        const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
         
         if (!API_KEY) {
-            throw new Error('API key not configured');
+            throw new Error('Gemini API key not configured');
         }
         
         setIsRegeneratingCoverLetter(true);
         
         try {
-            console.log('Regenerating cover letter...');
+            console.log('Regenerating cover letter with Gemini...');
             
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${API_KEY}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
-                    messages: [
-                        {
-                            role: 'user',
-                            content: `Write a professional, compelling cover letter for this job application. Research about the company and Make it unique and personalized based on the CV and job description. Return ONLY the cover letter text, no JSON or additional formatting.
-                                JOB DESCRIPTION: ${jobDescription}
-                                CANDIDATE'S CV: ${cvText}
-                                Write a cover letter that:
-                                - Shows enthusiasm for the specific role and company
-                                - Highlights relevant experience from the CV
-                                - Addresses key job requirements
-                                - Has a professional but engaging tone
-                                - (4-5 paragraphs of content around 400 words ,for new paragraphs use \\n)
-                                - Ends with a strong call to action`
-                        }
-                    ],
-                    temperature: 0.7, // Slightly higher for more creative writing
-                    max_tokens: 1500
+                    contents: [{
+                        parts: [{
+                            text: `Write a professional, compelling cover letter for this job application. Make it unique and personalized based on the CV and job description. Return ONLY the cover letter text, no JSON or additional formatting.
+
+                            JOB DESCRIPTION: ${jobDescription}
+
+                            CV CONTENT: ${cvText}
+
+                            Requirements:
+                            - 4-5 paragraphs, around 400 words
+                            - Professional yet engaging tone
+                            - Highlight relevant skills and experience
+                            - Address specific job requirements
+                            - Include specific examples where possible
+                            - Use \\n for new paragraphs
+                            - Start with "Dear Hiring Manager," and end with "Sincerely, [Candidate Name]"
+
+                            Return ONLY the cover letter text.`
+                        }]
+                    }],
+                    generationConfig: {
+                        temperature: 0.7,
+                        topK: 1,
+                        topP: 1,
+                        maxOutputTokens: 1024,
+                    }
                 })
             });
 
             if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`API request failed with status ${response.status}: ${errorText}`);
+                throw new Error(`Gemini API Error: ${response.status}`);
             }
 
             const data = await response.json();
+            const newCoverLetter = data.candidates[0].content.parts[0].text;
             
-            if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
-                throw new Error('Invalid API response structure');
-            }
-            
-            const newCoverLetter = data.choices[0]?.message?.content;
-            if (!newCoverLetter) {
-                throw new Error('No content in API response');
-            }
-            
-            // Update only the cover letter in the existing analysis
             if (analysis) {
                 setAnalysis({
                     ...analysis,
-                    coverLetter: newCoverLetter.trim()
+                    coverLetter: newCoverLetter
                 });
             }
             
-            console.log('Cover letter regenerated successfully');
-            
         } catch (error) {
             console.error('Cover letter regeneration failed:', error);
-            if (error instanceof Error) {
-                alert(`Failed to regenerate cover letter: ${error.message}`);
-            } else {
-                alert('Failed to regenerate cover letter: Unknown error');
-            }
+            alert('Failed to regenerate cover letter. Please try again.');
         } finally {
             setIsRegeneratingCoverLetter(false);
         }
@@ -351,7 +383,7 @@ const CVJobAnalyzer = () => {
             onClick={async () => {
                 setIsAnalyzing(true);
                 try {
-                    const result = await analyzeWithGroq(jobDescription, cvText);
+                    const result = await analyzeWithGemini(jobDescription, cvText);
                     
                     if (result) {
                         setAnalysis(result);
