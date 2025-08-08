@@ -294,7 +294,7 @@ const CVJobAnalyzer = () => {
         <p className="text-lg text-gray-600">
         Get professional insights, close skill gaps, and optimize your applications
         </p>
-        <p className="text-sm text-gray-400 mt-2"> powered by Groq AI</p>
+        <p className="text-sm text-gray-400 mt-2"> powered by Gemini API</p>
         </div>
         
         {/* Navigation Tabs */}
