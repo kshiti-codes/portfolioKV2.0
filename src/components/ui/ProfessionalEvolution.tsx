@@ -33,7 +33,7 @@ const ProfessionalEvolution = () => {
       subtitle: "Expanding Horizons",
       description: "Diversified experience across different sectors, from government to private enterprises.",
       bgColor: "from-purple-100 to-purple-200",
-      skills: ["TypeScript", "Node.js", "MongoDB", "API Design"],
+      skills: ["React", "TypeScript", "Node.js", "MongoDB", "API Design"],
       icon: TrendingUp
     },
     {
@@ -43,7 +43,7 @@ const ProfessionalEvolution = () => {
       subtitle: "Scaling Up",
       description: "Worked with Fortune 500 companies, handling complex enterprise applications.",
       bgColor: "from-green-100 to-green-200",
-      skills: ["GraphQL", "Data Visualization", "Performance Optimization", "Testing"],
+      skills: ["React", "TypeScript", "GraphQL", "Data Visualization", "Performance Optimization", "Testing"],
       icon: Award
     },
     {
@@ -53,7 +53,7 @@ const ProfessionalEvolution = () => {
       subtitle: "Entrepreneurial Journey",
       description: "Launched independent consultancy, focusing on AI-powered web solutions.",
       bgColor: "from-teal-100 to-cyan-200",
-      skills: ["AI Integration", "Business Strategy", "Client Management", "Leadership"],
+      skills: ["React", "AI Integration", "Data Visualization", "Business Strategy", "Client Management", "Leadership"],
       icon: Users
     }
   ];
@@ -76,17 +76,18 @@ const ProfessionalEvolution = () => {
       {
         id: 'psvm',
         name: 'PSVM Innova Pvt. Ltd.',
-        role: 'Software Developer Intern',
+        role: 'Frontend Developer - Mandatory Internship',
         duration: 'May 2018 - Apr 2019',
         logo: './images/company/innova.webp',
         logotype: 'url',
         color: 'from-blue-400 to-blue-600',
         borderColor: 'from-blue-400 to-blue-600',
         achievements: [
-          'First industry experience with professional development team',
-          'Learned React fundamentals and component-based architecture',
-          'Gained experience in team collaboration and version control',
-          'Contributed to multiple client projects successfully'
+          'Built foundational web development skills using HTML5, CSS3, JavaScript, and Bootstrap',
+          'Developed responsive user interfaces and learned component-based architecture principles',
+          'Gained experience with version control (Git) and collaborative development workflows',
+          'Created interactive web applications with DOM manipulation and JavaScript ES6 features',
+          'Established understanding of web performance optimization and cross-browser compatibility'
         ],
         description: 'My first professional role where I learned the fundamentals of web development and gained valuable industry experience.'
       },
@@ -103,27 +104,27 @@ const ProfessionalEvolution = () => {
         color: 'from-purple-400 to-purple-600',
         borderColor: 'from-purple-400 to-purple-600',
         achievements: [
-          'Specialized in frontend development and UI/UX implementation',
-          'Developed responsive web applications using modern frameworks',
-          'Improved client communication and project management skills',
-          'Delivered pixel-perfect designs with optimal performance'
+          'Transitioned to React.js development, building my first component-based applications',
+          'Developed responsive web applications using React hooks and functional components',
+          'Implemented state management and API integration for dynamic user interfaces',
+          'Enhanced UX/UI implementation skills with modern CSS-in-JS approaches'
         ],
         description: 'Focused on frontend specialization and enhanced my skills in creating beautiful, responsive user interfaces.'
       },
       {
         id: 'bisag',
         name: 'BISAG',
-        role: 'Junior Developer',
+        role: 'Frontend Developer - Machine Learning Focused',
         duration: 'Dec 2019 - Apr 2020',
         logo: './images/company/bisag.jpg',
         logotype: 'url',
         color: 'from-green-400 to-green-600',
         borderColor: 'from-green-400 to-green-600',
         achievements: [
-          'Worked on government sector projects with high security standards',
-          'Developed scalable web applications for public services',
-          'Learned about compliance and government development standards',
-          'Contributed to digital governance initiatives'
+          'Developed React-based public service applications serving 100K+ government users',
+          'Integrated machine learning APIs with React frontends for data-driven decision making',
+          'Built secure, compliant web applications meeting government security standards',
+          'Implemented responsive design systems ensuring accessibility across diverse user bases'
         ],
         description: 'Gained experience in government sector development with focus on public service applications.'
       },
@@ -133,17 +134,18 @@ const ProfessionalEvolution = () => {
         {
         id: 'tatvasoft',
         name: 'Tatvasoft Pvt. Ltd.',
-        role: 'Software Engineer',
+        role: 'Junior Frontend Developer',
         duration: 'Oct 2020 - Mar 2021',
         logo: './images/company/tatvasoft.png',
         logotype: 'url',
         color: 'from-orange-400 to-red-600',
         borderColor: 'from-orange-400 to-red-600',
         achievements: [
-          'Enhanced skills in full-stack development',
-          'Worked with international clients and diverse projects',
-          'Improved code quality and development practices',
-          'Gained experience in agile development methodologies'
+          'Developed React applications for international clients across diverse industry verticals',
+          'Enhanced technical expertise in React ecosystem including hooks, context API, and lifecycle methods',
+          'Improved code quality through implementation of React testing libraries and best practices',
+          'Collaborated with cross-functional teams using agile methodologies for React-based solutions',
+          'Gained experience in React performance optimization and bundle size reduction techniques'
         ],
         description: 'Expanded my technical expertise while working on diverse international projects.'
       },
@@ -157,10 +159,11 @@ const ProfessionalEvolution = () => {
         color: 'from-blue-600 to-indigo-600',
         borderColor: 'from-blue-600 to-indigo-600',
         achievements: [
-          'Worked with Fortune 500 clients including IBM and Moody\'s Analytics',
-          'Led frontend development for enterprise-scale applications',
-          'Mentored junior developers and established coding standards',
-          'Achieved 90%+ test coverage and 40% performance improvements'
+          'Architected and developed React/TypeScript applications for Fortune 500 clients including IBM and Moody\'s Analytics',
+          'Led React frontend development for enterprise-scale applications serving millions of users',
+          'Mentored junior developers in React best practices and established React coding standards across teams',
+          'Integrated 8 RESTful APIs improving data loading speed by 35% through React optimization',
+          'Achieved 90%+ test coverage using Jest and React Testing Library, reducing post-release defects by 40%'
         ],
         description: 'Led enterprise-level projects for major clients, focusing on scalable and high-performance solutions.'
       }
@@ -169,16 +172,17 @@ const ProfessionalEvolution = () => {
       {
         id: 'freelance',
         name: 'Independent Consultant',
-        role: 'Full-Stack Developer & AI Specialist',
+        role: 'Frontend Developer & AI Specialist',
         duration: 'Sep 2024 - Present',
         logo: '🚀',
         color: 'from-teal-500 to-cyan-500',
         borderColor: 'from-teal-500 to-cyan-500',
         achievements: [
-          'Launched successful projects for businesses',
-          'Specialized in AI-powered web solutions and automation',
-          'Built strong client relationships across the',
-          'Delivered 20+ projects with 98% client satisfaction rate'
+          'Developing React/TypeScript applications with AI API integrations serving 5,000+ monthly users',
+          'Building data-rich analytics dashboards using React with real-time data visualization (D3.js, Chart.js)',
+          'Integrated machine learning APIs improving user engagement by 45% through intelligent UX',
+          'Achieved 99.8% uptime and 60% faster loading times through React performance optimization'
+          
         ],
         description: 'Currently building innovative AI-powered solutions as an independent consultant, helping businesses transform digitally.'
       }

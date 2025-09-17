@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, version } from 'react';
 import Footer from '../layout/Footer';
 import { Upload, FileText, Target, Brain, PenTool, MapPin, RefreshCw , MessageSquare, Download, AlertCircle, CheckCircle, TrendingUp } from 'lucide-react';
 
@@ -36,6 +36,7 @@ const CVJobAnalyzer = () => {
     
     const fileInputRef = useRef<HTMLInputElement>(null);
     // Simple test to verify Groq API works
+    // Need to add Groq API new version functionality here
     
     const analyzeWithGemini = async (jobDesc: string, cvContent: string) => {
         const API_KEY = import.meta.env.VITE_GEMINI_API_KEY; // Set in your .env file as VITE_GEMINI_API_KEY

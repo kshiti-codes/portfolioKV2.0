@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description: 'Architected full-scale digital book marketplace processing 1500+ transactions with 98% success rate, featuring subscription management, interactive reading interface, and comprehensive admin analytics. Managed 1000+ users, 50+ coaches, and 300+ booking sessions with integrated PayPal payments and email campaigns.',
     image: './images/projects/mmk.png',
     category: 'E-commerce',
-    technologies: ['Laravel & PHP', 'React', 'TailwindCSS', 'MySQL', 'PayPal API'],
+    technologies: ['React', 'TailwindCSS', 'MySQL', 'PayPal API', 'Laravel & PHP'],
     link: 'https://mastermagicalkey.com/',
     featured: true,
     content: `

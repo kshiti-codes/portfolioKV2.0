@@ -91,7 +91,7 @@ const About: React.FC = () => {
           
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Hi, I'm <span className="text-teal-600">Kshiti</span>, a Full Stack Developer with a passion for AI
+              Hi, I'm <span className="text-teal-600">Kshiti</span>, a Frontend Developer with a passion for AI
               and Web development.
             </h3>
             
@@ -126,7 +126,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Experience</h4>
-                  <p className="text-gray-700">5+ Years</p>
+                  <p className="text-gray-700">6+ Years</p>
                 </div>
               </div>
               
@@ -169,7 +169,7 @@ const About: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition duration-300"
               >
-                Download Resume
+                View Curiculum Vitae
                 <svg 
                   className="ml-2 h-5 w-5" 
                   fill="none" 

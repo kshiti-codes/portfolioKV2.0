@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const [typewriterText, setTypewriterText] = useState('');
   const [showCursor, setShowCursor] = useState(false);
   
-  const fullText = "Full-Stack Developer Who Speaks AI\nBuilding Scalable, Secure, and User-Centric Applications";
+  const fullText = "Frontend Developer Who Speaks AI\nBuilding Scalable, Secure, and User-Centric Applications";
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -158,7 +158,7 @@ const Hero: React.FC = () => {
           >
             <div className="flex items-center">
               <div className="h-1 w-8 bg-teal-500 mr-3"></div>
-              <span className="text-gray-700">5+ Years Experience</span>
+              <span className="text-gray-700">6+ Years Experience</span>
             </div>
             <div className="flex items-center">
               <div className="h-1 w-8 bg-teal-500 mr-3"></div>
