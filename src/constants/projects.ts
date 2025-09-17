@@ -95,7 +95,7 @@ export const projects: Project[] = [
     category: 'Web Application',
     technologies: ['React Hooks', 'RTK Query', ' Emotion-js', 'Recharts', 'TailwindCSS'],
     link: 'https://realtimeanalyticsdashboard.netlify.app/',
-    featured: true,
+    featured: false,
     content: ``
   },
   {
