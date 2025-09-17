@@ -89,6 +89,28 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: 'Real-time Analytics Dashboard',
+    description: 'A single-screen React dashboard built with RTK Query and Emotion-js featuring interactive charts (pie, bar, line), real-time search, and glass morphism UI design. Demonstrates advanced frontend skills including performance optimization with useMemo, conditional API queries, debounced search functionality, and responsive CSS Grid layouts for optimal user experience.',
+    image: './images/projects/analyticsdashboard.png',
+    category: 'Web Application',
+    technologies: ['React Hooks', 'RTK Query', ' Emotion-js', 'Recharts', 'TailwindCSS'],
+    link: 'https://realtimeanalyticsdashboard.netlify.app/',
+    featured: true,
+    content: ``
+  },
+  {
+    id: 3,
+    title: 'Shopping Cart Simulator',
+    description: 'A React application demonstrating advanced state management with useReducer, useMemo optimization, and custom hooks. Features dynamic inventory management, real-time calculations, category filtering, and responsive design—showcasing modern React patterns and scalable component architecture for real-world applications.',
+    image: './images/projects/shoppingcartsimulator.png',
+    category: 'Web Application',
+    technologies: ['React state management', 'hooks', 'React patterns', 'responsive design'],
+    link: 'https://shoppingcartsimulator.netlify.app/',
+    featured: false,
+    content: ``
+  },
+  {
+    id: 4,
     title: 'IBM Engineering Lifecycle Management',
     description: 'Built enterprise-scale reporting UI using React, TypeScript, and Graphite framework with 85% test coverage and 30% performance improvement on large datasets. Collaborated with cross-functional teams to deliver WCAG 2.1 AA compliant components serving thousands of engineering professionals globally.',
     image: './images/projects/JRS.png',
@@ -98,7 +120,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 3,
+    id: 5,
     title: 'Moody\'s Analytics - CreditLens™ Platform',
     description: 'Developed high-performance financial platform interfaces using React, TypeScript, and GraphQL with 90% test coverage and 40% defect reduction. Implemented advanced code splitting and lazy loading techniques while mentoring junior developers and maintaining enterprise-grade code quality standards.',
     image: './images/projects/creditlense.jpg',
@@ -194,7 +216,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 4,
+    id: 6,
     title: 'Website Translation Plugin',
     description: 'Developed automated JavaScript plugin that extracts website content, translates into 10+ languages, and generates ready-to-use i18n files with zero manual effort. Handles 1000+ DOM nodes efficiently with API-agnostic design, saving developers weeks of internationalization work.',
     image: './images/projects/websiteTransPlugin.webp',
@@ -297,7 +319,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 5,
+    id: 7,
     title: 'Super Resolution using GAN',
     description: 'Engineered cutting-edge AI system combining Generative Adversarial Networks with Residual Dense Networks to enhance image resolution with superior visual quality. Achieved state-of-the-art results using advanced deep learning techniques, making it applicable to photography, medical imaging, and satellite imagery enhancement.',
     image: './images/projects/gan.jpg',
@@ -422,7 +444,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 6,
+    id: 8,
     title: 'Sign Language Recognition Survey',
     description: 'Developed and compared high-accuracy machine learning models (SVM: 99.79%, CNN: 99.83%) for American Sign Language recognition using 27,455+ training images. Created production-ready Jupyter notebooks with comprehensive documentation, advancing accessibility technology through cutting-edge computer vision.',
     image: './images/projects/SLR.png',
@@ -432,7 +454,7 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: 7,
+    id: 9,
     title: 'Care for Each - Field Force Management Tool',
     description: 'Built enterprise-grade field force management system with real-time personnel tracking, automated reporting, and comprehensive analytics dashboard. Achieved 40% reduction in data loading time through advanced query optimization and caching strategies, managing 100+ field personnel efficiently.',
     image: './images/projects/careForEach.webp',
@@ -549,7 +571,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 8,
+    id: 10,
     title: 'Spend Sage - Personal Finance App',
     description: 'Designed intuitive expense tracking application with interactive data visualizations using Chart.js, category filtering, and real-time financial insights. Built with React and Redux for seamless user experience, helping users make informed financial decisions through comprehensive budget management.',
     image: './images/projects/spendsage.webp',
@@ -559,7 +581,7 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: 9,
+    id: 11,
     title: 'BookLand - Second Hand Book Platform',
     description: 'Built a comprehensive e-commerce ecosystem with smart geolocation search, integrated wallet system, and AI-powered recommendations that promoted sustainability through book reuse. Delivered full-stack solution with secure payment processing, real-time notifications, and optimized MySQL queries for seamless user experience.',
     image: './images/projects/booland.jpg',
@@ -630,7 +652,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 10,
+    id: 12,
     title: 'The Last Step - University Portal',
     description: 'Developed a complete academic management system handling 1000+ students with role-based authentication, automated progress tracking, and real-time grading workflows. Created intuitive dashboards for both students and supervisors with comprehensive reporting and notification systems using CodeIgniter and Bootstrap.',
     image: './images/projects/theLastStep.jpeg',
