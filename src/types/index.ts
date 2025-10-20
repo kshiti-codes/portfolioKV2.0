@@ -46,7 +46,7 @@ export interface LiveTool {
   description: string;
   shortDescription: string;
   image: string;
-  category: 'AI Tools' | 'Utilities' | 'Demos' | 'Interactive';
+  category: 'AI Tools' | 'Utilities' | 'Demos' | 'Interactive Tools';
   technologies: string[];
   artifactUrl: string;
   sourceCode?: string;

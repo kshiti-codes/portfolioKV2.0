@@ -14,10 +14,10 @@ function HomePage() {
     <Layout>
       <Hero />
       <About />
+      <Skills />
       <Projects />
       <LiveTools />
       <Services />
-      <Skills />
       <Testimonials />
       <Contact />
     </Layout>

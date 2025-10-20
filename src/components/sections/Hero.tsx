@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 to-gray-100"
+      className="relative flex items-center pt-20 bg-gradient-to-br from-gray-50 to-gray-100"
     >
       <div className="absolute inset-0 z-0 opacity-30">
         <div className="absolute top-20 left-1/4 w-64 h-64 rounded-full bg-teal-300 filter blur-3xl"></div>
@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
           </p>
           
           <div 
-            className={`flex flex-col sm:flex-row justify-center gap-4 transition-all duration-700 ease-out ${
+            className={`flex flex-row sm:flex-row justify-center gap-4 transition-all duration-700 ease-out ${
               isLoaded 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-8'

@@ -61,100 +61,61 @@ const Skills: React.FC = () => {
   }, [category]);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Technologies I Use
-          </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            I work with a diverse set of modern technologies and tools to build exceptional web experiences.
-          </p>
-          <div className="h-1 w-20 bg-teal-500 mx-auto mt-4"></div>
-        </div>
-        
-        <div className="flex flex-wrap justify-center mb-12 gap-3">
-          {categories.map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => setCategory(cat.id)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition duration-300 ${
-                category === cat.id
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-        
-        <div 
-          ref={skillsRef}
-          className="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
-        >
-          {filteredSkills.map((skill, index) => {
-            const waveDelay = getWaveDelay(index, filteredSkills.length);
-            const IconComponent = skill.icon;
-            
-            return (
-              <div 
-                key={skill.id} 
-                className={`group bg-white rounded-xl p-4 sm:p-6 shadow-md border border-gray-100 transform transition-all duration-600 ease-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 ${
-                  isVisible 
-                    ? 'scale-100 opacity-100 translate-y-0' 
-                    : 'scale-75 opacity-0 translate-y-8'
-                }`}
-                style={{
-                  transitionDelay: isVisible ? `${waveDelay}ms` : '0ms'
-                }}
-              >
-                <div className="flex flex-col items-center text-center">
+      <section id="skills" className="py-20 px-4">
+        <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(0px); }
+        }
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+          display: inline-flex;
+          width: max-content;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+        <div className="mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Skills & Technologies</h2>
+          <div className="relative overflow-hidden">
+            <div className="flex whitespace-nowrap animate-scroll" ref={skillsRef}>
+              {/* First set */}
+              {skills.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
                   <div 
-                    className="w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-3 transition-all duration-500 group-hover:scale-110 flex items-center justify-center"
-                    style={{ 
-                      color: isVisible ? skill.iconColor : '#D1D5DB'
-                    }}
+                    key={`first-${index}`}
+                    className="inline-flex items-center justify-center mx-8 text-6xl opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    title={skill.name}
+                    style={{ color: skill.iconColor }}
                   >
-                    <IconComponent size={32} className="sm:hidden" />
-                    <IconComponent size={48} className="hidden sm:block" />
+                    <Icon />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
-                    {skill.name}
-                  </h3>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <div 
-            className={`bg-white rounded-xl p-8 shadow-sm border border-gray-100 max-w-4xl mx-auto`}
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Always Learning</h3>
-            <p className="text-gray-700 mb-6">
-              Technology evolves rapidly, and I stay up-to-date with the latest trends and best practices. 
-              Currently exploring new frameworks, cloud technologies, and development methodologies to deliver 
-              cutting-edge solutions.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Next.js', 'AI/ML', 'Web3', 'Serverless', 'Microservices', 'JAMstack'].map((tech, index) => (
-                <span 
-                  key={index}
-                  className={`bg-gradient-to-r from-teal-50 to-blue-50 text-teal-700 px-4 py-2 rounded-full text-sm font-medium border border-teal-200`}
-                  style={{
-                    transitionDelay: isVisible ? `${getWaveDelay(filteredSkills.length - 1, filteredSkills.length) + 400 + index * 100}ms` : '0ms'
-                  }}
-                >
-                  {tech}
-                </span>
-              ))}
+                );
+              })}
+              {/* Duplicate set for seamless loop */}
+              {skills.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
+                  <div 
+                    key={`second-${index}`}
+                    className="inline-flex items-center justify-center mx-8 text-6xl opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    title={skill.name}
+                    style={{ color: skill.iconColor }}
+                  >
+                    <Icon />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
