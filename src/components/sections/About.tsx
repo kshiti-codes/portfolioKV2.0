@@ -163,7 +163,7 @@ const About: React.FC = () => {
             
             <div className="mt-8">
               <a 
-                href="./pdf/resume.pdf" 
+                href="./pdf/kshitipatel.pdf" 
                 download
                 target='_blank'
                 rel="noopener noreferrer"
