@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import HomePage from './components/pages/HomePage';
 import CVJobAnalyzer from './components/pages/CVJobAnalyzer';
+import { useLenis } from './hooks/useLenis';
 
 function App() {
+  useLenis();
+
   return (
     <Router>
         <Routes>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code } from 'lucide-react';
 import { testimonials } from '../../constants/testimonials';
+import { useLenis } from '../../hooks/useLenis';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const lenisRef = useLenis();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +22,12 @@ const Header: React.FC = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element && lenisRef.current) {
+      lenisRef.current.scrollTo(element, {
+        offset: 0,
+        duration: 1.2,
+      });
     }
   };
 

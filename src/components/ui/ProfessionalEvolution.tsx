@@ -113,20 +113,20 @@ const ProfessionalEvolution = () => {
       },
       {
         id: 'bisag',
-        name: 'BISAG',
-        role: 'Frontend Developer - Machine Learning Focused',
+        name: 'BISAG-N',
+        role: 'Frontend Developer',
         duration: 'Dec 2019 - Apr 2020',
         logo: './images/company/bisag.jpg',
         logotype: 'url',
         color: 'from-green-400 to-green-600',
         borderColor: 'from-green-400 to-green-600',
         achievements: [
-          'Developed React-based public service applications serving 100K+ government users',
-          'Integrated machine learning APIs with React frontends for data-driven decision making',
-          'Built secure, compliant web applications meeting government security standards',
-          'Implemented responsive design systems ensuring accessibility across diverse user bases'
+          'Architected Earth observation dashboards using Vue.js 3, MapLibre GL JS, TypeScript for satellite data visualization and real-time geospatial analysis',
+          'Developed enterprise GIS web applications with REST APIs and dynamic mapping tools processing large-scale spatial datasets for government sectors',
+          'Built remote sensing platforms for agriculture, disaster management, and infrastructure monitoring supporting Digital India mission',
+          'Implemented CI/CD pipelines and performance optimization for geospatial applications, collaborating with MeitY in agile environment'
         ],
-        description: 'Gained experience in government sector development with focus on public service applications.'
+        description: 'Gained experience in government sector development with focus on geospatial web applications.'
       },
       
     ],
@@ -141,7 +141,7 @@ const ProfessionalEvolution = () => {
         color: 'from-orange-400 to-red-600',
         borderColor: 'from-orange-400 to-red-600',
         achievements: [
-          'Developed React applications for international clients across diverse industry verticals',
+          'Developed Vue3/React applications for international clients across diverse industry verticals',
           'Enhanced technical expertise in React ecosystem including hooks, context API, and lifecycle methods',
           'Improved code quality through implementation of React testing libraries and best practices',
           'Collaborated with cross-functional teams using agile methodologies for React-based solutions',
@@ -178,8 +178,8 @@ const ProfessionalEvolution = () => {
         color: 'from-teal-500 to-cyan-500',
         borderColor: 'from-teal-500 to-cyan-500',
         achievements: [
-          'Developing React/TypeScript applications with AI API integrations serving 5,000+ monthly users',
-          'Building data-rich analytics dashboards using React with real-time data visualization (D3.js, Chart.js)',
+          'Developing Vue.js 3 (Composition API) and React/TypeScript applications with AI API integrations serving 5k+ monthly users',
+          'Building data-rich analytics dashboards with real-time data visualization (D3.js, Chart.js)',
           'Integrated machine learning APIs improving user engagement by 45% through intelligent UX',
           'Achieved 99.8% uptime and 60% faster loading times through React performance optimization'
           

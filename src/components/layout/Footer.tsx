@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Slack, Mail, Code, ArrowUp, MapPin, Phone } from 'lucide-react';
+import { useLenis } from '../../hooks/useLenis';
 
 const Footer: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const lenisRef = useLenis();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +20,12 @@ const Footer: React.FC = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element && lenisRef.current) {
+      lenisRef.current.scrollTo(element, {
+        offset: 0,
+        duration: 1.2,
+      });
     }
   };
 
